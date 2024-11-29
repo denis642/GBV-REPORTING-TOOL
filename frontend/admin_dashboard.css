@@ -1,0 +1,125 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.header {
+    background-color: #3a3dbe;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Admin Profile Section */
+.admin-profile {
+    text-align: center;
+    margin-bottom: 30px; /* Space between profile and other sidebar items */
+    padding: 10px;
+    border-bottom: 2px solid #444; /* Optional border for separation */
+}
+
+.admin-profile .profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image is contained within the circle */
+    margin-bottom: 10px;
+}
+
+.admin-profile h3 {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+}
+
+.admin-profile p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Optional Styling for Sidebar Links to Improve Look */
+.sidebar a:active,
+.sidebar a:focus {
+    background-color: #444;
+}
+
+
+/* Content */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Headings */
+h2, h3 {
+    color: #3a3dbe;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3a3dbe;
+    color: white;
+}
+
+/* Buttons */
+button {
+    padding: 10px;
+    background-color: #3a3dbe;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2d3095;
+}

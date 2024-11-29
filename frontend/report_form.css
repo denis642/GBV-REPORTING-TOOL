@@ -1,0 +1,135 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #3a3dbe;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+/* Report Form Styling */
+.report-form {
+    background-color: white;
+    padding: 30px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.report-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3a3dbe;
+}
+
+.report-form label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.report-form input, 
+.report-form select, 
+.report-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+}
+
+.report-form textarea {
+    resize: vertical;
+}
+
+.report-form input[type="file"] {
+    padding: 5px;
+}
+
+/* Button Styling for Submit and Back to Dashboard */
+.report-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.report-form button, 
+.report-form .btn-back {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+    text-align: center;
+}
+
+.report-form button {
+    background-color: #3a3dbe;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.report-form button:hover {
+    background-color: #2f31a6;
+}
+
+.report-form .btn-back {
+    background-color: pink;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    display: inline-block;
+    text-align: center;
+}
+
+.report-form .btn-back:hover {
+    opacity: 0.8;
+}
+
+/* Container for responsive behavior */
+.container {
+    padding: 0 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .report-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .report-form .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .report-form button, 
+    .report-form .btn-back {
+        width: 100%;
+    }
+}

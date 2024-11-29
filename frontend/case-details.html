@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Details</title>
+    <link rel="stylesheet" href="case-details.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Case Details</h1>
+        </header>
+
+        <div class="case-details" id="caseDetails">
+            <!-- Case details will be dynamically inserted here -->
+        </div>
+
+        <div class="admin-actions">
+            <h2>Admin Actions</h2>
+            <button class="action-btn" id="updateStatus">Update Status</button>
+            <button class="action-btn" id="markResolved">Mark as Resolved</button>
+            <button class="action-btn delete" id="deleteCase">Delete Case</button>
+        </div>
+
+        <div class="comments-section">
+            <h2>Comments/Notes</h2>
+            <textarea id="adminComments" placeholder="Add comments or instructions"></textarea>
+            <button class="action-btn" id="saveComment">Save Comment</button>
+        </div>
+    </div>
+
+    <!-- Link to the case-details.js script -->
+    <script src="case-details.js"></script>
+
+</body>
+</html>

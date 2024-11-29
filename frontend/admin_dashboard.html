@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <!-- Sidebar -->
+      
+    
+    <div class="sidebar">
+         <!-- Admin Profile Section  -->
+        <div class="admin-profile">
+            <img src="/frontend/img/avatar.png" alt="Admin Profile" class="profile-image">
+            <h3 id="admin-name">Loading...</h3> <!-- Admin's name will be loaded here -->
+            
+        </div>
+        <a href="admin_dashboard.html">Dashboard</a>
+        <a href="manage-users.html">Manage Users</a>
+        
+        <a href="profile.html">Profile</a>
+        <a href="/frontend/adminlogin.html">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>Here you can manage all the reported cases, users, and system settings.</p>
+
+        <h3>Recent Reported Cases</h3>
+        <table id="casesTable">
+            <thead>
+                <tr>
+                    <th>Case ID</th>
+                    <th>Name of the Affected</th>
+                    <th>Case Description</th>
+                    <th>Date Reported</th>
+                    <th>Status</th> <!-- New Status Column -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be inserted here via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+       // Function to fetch and display the logged-in admin's name
+async function loadAdminName() {
+    try {
+        const response = await fetch('http://localhost:3000/admin/profile', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}` // If using JWT
+            }
+        });
+
+        if (response.ok) {
+            const adminProfile = await response.json();
+            document.getElementById('admin-name').textContent = adminProfile.name;
+        } else {
+            console.error('Error fetching admin profile:', response.statusText);
+            document.getElementById('admin-name').textContent = 'Admin Name (Not Available)';
+        }
+    } catch (error) {
+        console.error('Error fetching admin profile:', error);
+        document.getElementById('admin-name').textContent = 'Error loading profile';
+    }
+}
+
+        // Function to fetch and display reported cases from the server
+        async function loadCases() {
+    try {
+        const response = await fetch('http://localhost:3000/admin/reported-cases');
+        const cases = await response.json();
+
+        const casesTable = document.getElementById('casesTable').getElementsByTagName('tbody')[0];
+        casesTable.innerHTML = ''; // Clear any existing rows
+
+        cases.forEach((caseItem) => {
+            const newRow = casesTable.insertRow();
+
+            const caseIdCell = newRow.insertCell(0);
+            caseIdCell.textContent = caseItem.caseId;
+
+            const reportedByCell = newRow.insertCell(1);
+            reportedByCell.textContent = caseItem.reportedBy;
+
+            const descriptionCell = newRow.insertCell(2);
+            descriptionCell.textContent = caseItem.description;
+
+            const dateReportedCell = newRow.insertCell(3);
+            dateReportedCell.textContent = new Date(caseItem.dateReported).toLocaleDateString();
+
+            const statusCell = newRow.insertCell(4); // Status column
+            statusCell.textContent = caseItem.status || 'Pending'; // Show updated status here
+
+            const actionCell = newRow.insertCell(5);
+            const viewButton = document.createElement('button');
+            viewButton.textContent = 'View';
+            viewButton.addEventListener('click', () => {
+                console.log(`Viewing case with ID: ${caseItem.caseId}`);
+                window.location.href = `case-details.html?caseId=${caseItem.caseId}`;
+            });
+
+            actionCell.appendChild(viewButton);
+        });
+    } catch (error) {
+        console.error('Error fetching reported cases:', error);
+    }
+}
+
+
+
+
+        // Load cases when the page loads
+        window.onload = function() {
+            loadAdminName();
+            loadCases();
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report GBV Incident</title>
+    <link rel="stylesheet" href="report_form.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Feel Free to Report</h1>
+        </div>
+    </header>
+
+    <section class="report-form">
+        <div class="container">
+            <h2>Incident Report Form</h2> <!-- Title placed here -->
+            <form action="http://localhost:3000/report" method="post" enctype="multipart/form-data">
+                <!-- Hidden userId field -->
+                <input type="hidden" id="userId" name="userId" value="USER_ID_FROM_BACKEND">
+                
+                <!-- Affected person details -->
+                <label for="name">Name of Affected:</label>
+                <input type="text" id="name" name="name" placeholder="Enter full name" required>
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter age" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            
+                <!-- Location details -->
+                <label for="county">County:</label>
+                <input type="text" id="county" name="county" placeholder="Enter county" required>
+                
+                <label for="subcounty">Subcounty:</label>
+                <input type="text" id="subcounty" name="subcounty" placeholder="Enter subcounty" required>
+                
+                <label for="area">Area of Occurrence:</label>
+                <input type="text" id="area" name="area" placeholder="Enter area" required>
+            
+                <!-- Incident details -->
+                <label for="incident-type">Type of Incident:</label>
+                <select id="incident-type" name="incidentType" required> <!-- Changed here -->
+                    <option value="">Select type</option>
+                    <option value="physical-abuse">Physical Abuse</option>
+                    <option value="sexual-abuse">Sexual Abuse</option>
+                    <option value="emotional-abuse">Emotional Abuse</option>
+                    <option value="economic-abuse">Economic Abuse</option>
+                </select>
+                
+                <!-- Date of Incident -->
+                <label for="incident-date">Incident Date:</label>
+                <input type="date" id="incident-date" name="incidentDate" required>
+
+                <label for="description">Description of the Incident:</label>
+                <textarea id="description" name="description" rows="6" placeholder="Provide a detailed description" required></textarea>
+            
+                <!-- Optional media upload -->
+                <label for="media-upload">Upload Supporting Evidence (Optional):</label>
+                <input type="file" id="media-upload" name="media-upload" accept="image/*,video/*,audio/*">
+            
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="submit">Submit Report</button>
+                    <a href="./report_dashboard.html" class="btn-back">Back to Dashboard</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Dynamically populate the userId field
+        const userId = localStorage.getItem('userId'); // Assume stored after login
+        if (userId) {
+            document.getElementById('userId').value = userId;
+        }
+    </script>
+    
+</body>
+</html>

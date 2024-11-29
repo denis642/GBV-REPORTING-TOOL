@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBV Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 15px 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .logo img {
+            width: 120px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a.active {
+            text-decoration: underline;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 20px;
+            text-align: center;
+        }
+        .resources h1 {
+            color: #6c63ff;
+            margin-bottom: 10px;
+        }
+        .resource-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .resource-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.2s;
+        }
+        .resource-item:hover {
+            transform: scale(1.05);
+        }
+        .resource-item h3 {
+            color: #6c63ff;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #6c63ff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #5148c4;
+        }
+
+        /* Safety Measures Section */
+        .safety-measures {
+            background: #f1f1f1;
+            padding: 20px;
+        }
+        .safety-measures h2 {
+            color: #6c63ff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .measures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .measure-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            width: 280px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .measure-item h3 {
+            color: #6c63ff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+        .footer-section ul li i {
+            margin-right: 5px;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+        .social-icons a:hover {
+            color: #6c63ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/gbv1-removebg-preview.png" alt="GBV Reporting Tool Logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">Sign up</a></li>
+                    <li><a href="login.html">Report GBV</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resources Section -->
+    <main>
+        <section class="resources">
+            <h1>Resources for GBV Survivors</h1>
+            <p>Here are some resources that can provide support and information:</p>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h3>Emergency Helplines</h3>
+                    <p>If you're in immediate danger, contact the following helplines:</p>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> +254701526064</li>
+                        <li><i class="fas fa-phone-alt"></i> +254728657017</li>
+                    </ul>
+                </div>
+
+                <div class="resource-item">
+                    <h3>Understanding GBV</h3>
+                    <p>Learn what GBV is, its dangers, causes, and effects:</p>
+                    <a href="understanding-gbv.html" class="btn">Learn More</a>
+                </div>
+
+                <div class="resource-item">
+                    <h3>Know Your Rights</h3>
+                    <p>Understand the legal protections and services available for survivors:</p>
+                    <a href="rights.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety and Preventive Measures -->
+        <section class="safety-measures">
+            <h2>Safety and Preventive Measures</h2>
+            <div class="measures">
+                <div class="measure-item">
+                    <h3>Safety Tips</h3>
+                    <p>- Keep emergency contacts easily accessible.<br>
+                       - Inform trusted individuals about your location.<br>
+                       - Plan safe exit strategies in case of danger.</p>
+                </div>
+                <div class="measure-item">
+                    <h3>Preventive Measures</h3>
+                    <p>- Promote open communication in relationships.<br>
+                       - Participate in GBV awareness programs.<br>
+                       - Encourage bystander intervention in unsafe situations.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Hotlines</h4>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> +254701526064</li>
+                    <li><i class="fas fa-phone-alt"></i> +254728657017</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

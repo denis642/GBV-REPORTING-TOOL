@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="admin_dashboard.css"> <!-- Link to external CSS -->
+    <script defer src="manage-users.js"></script> <!-- JavaScript file for managing users -->
+</head>
+<body>
+
+    <div class="header">
+        <h1>Manage Users</h1>
+    </div>
+
+    <div class="sidebar">
+        
+        <a href="admin_dashboard.html">Dashboard</a>
+        <a href="manage-users.html">Manage Users</a>
+        
+        <a href="profile.html">Profile</a>
+        <a href="/adminlogin.html">Logout</a>
+    </div>
+
+    <div class="content">
+        <h2>Manage Users</h2>
+
+        <!-- Table to display users -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="users-table">
+                <!-- Rows will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Form to add a new user -->
+        <h3>Add User</h3>
+        <form id="add-user-form">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+        
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <!-- Add a password field -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+</body>
+</html>

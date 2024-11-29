@@ -1,0 +1,165 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    background-color: #3a3dbe;
+    color: #fff;
+    padding: 20px 0; /* Increased height */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px;
+}
+
+/* Logo styling */
+.logo img {
+    height: 80px; /* Adjust height as needed */
+    display: block; /* Ensures it's treated like a block-level element */
+    border-radius: 50%; /* Makes it circular if possible */
+    background-color: white; /* Ensures background is consistent */
+    padding: 5px; /* Adds some spacing around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Grows slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    display: flex; /* Align items in a row */
+}
+
+nav ul li {
+    margin: 0 15px; /* Spacing between navigation items */
+}
+
+nav ul li a {
+    color: #fff; /* Text color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #ddd; /* Change color on hover */
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background-color: #3a3dbe;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-banner h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.welcome-banner p {
+    font-size: 1.2rem;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item h2 {
+    font-size: 2rem;
+    color: #3a3dbe;
+}
+
+.stat-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Action Cards */
+.action-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 25%;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card .btn {
+    background: #3a3dbe;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.card .btn:hover {
+    background: #2a2cae;
+}
+
+/* Recent Reports */
+.recent-reports {
+    margin: 20px;
+}
+
+.recent-reports table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.recent-reports th, .recent-reports td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.recent-reports th {
+    background-color: #3a3dbe;
+    color: #fff;
+}

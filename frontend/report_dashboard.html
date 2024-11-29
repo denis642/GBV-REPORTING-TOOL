@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Dashboard</title>
+    <link rel="stylesheet" href="report_dashboard.css">
+    <script>
+        // Fetch total reports and update the UI
+        async function fetchTotalReports() {
+            try {
+                // Call the backend API endpoint to get total reports
+                const response = await fetch('http://localhost:3000/reported-cases/total');
+                
+                // Check if the response is OK
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch total reports: ${response.statusText}`);
+                }
+
+                // Parse the response data
+                const data = await response.json();
+
+                // Update the total reports count in the UI
+                document.getElementById('total-reports').textContent = data.totalReports;
+            } catch (error) {
+                console.error('Error fetching total reports:', error);
+                document.getElementById('total-reports').textContent = 'Error';
+            }
+        }
+
+        // Fetch the logged-in user's name and update the welcome banner
+        // Fetch the logged-in user's name and update the welcome banner
+async function fetchUserName() {
+    const userId = localStorage.getItem('userId'); // Assuming the user ID is stored in localStorage after login
+    
+    if (!userId) {
+        console.error('No user ID found');
+        return;
+    }
+
+    try {
+        // Call the backend API to get user info
+        const response = await fetch(`http://localhost:3000/user-info?userId=${userId}`);
+        
+        // Check if the response is OK
+        if (!response.ok) {
+            throw new Error(`Failed to fetch user info: ${response.statusText}`);
+        }
+
+        // Parse the response data
+        const data = await response.json();
+
+        // Update the welcome banner with the user's name and waving hand emoji
+        document.querySelector('.welcome-banner h1').textContent = `👋 Welcome, ${data.name}`;
+    } catch (error) {
+        console.error('Error fetching user name:', error);
+        document.querySelector('.welcome-banner h1').textContent = '👋 Welcome, Guest';
+    }
+}
+
+
+        // Load all data on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchTotalReports();
+            fetchUserName();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/download.jpeg" alt="GBV Reporting Tool Logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="report_form.html">Report GBV</a></li>
+                    <li><a href="submitted-reports.html">Submitted Reports</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome Banner -->
+    <section class="welcome-banner">
+        <h1>Welcome, [User's Name]</h1>
+        <p>Access tools to report and track Gender-Based Violence incidents effectively.</p>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <h2 id="total-reports">Loading...</h2>
+            <p>Total Reports in our system</p>
+        </div>
+    </section>
+
+    <!-- Action Cards -->
+    <section class="action-cards">
+        <div class="card">
+            <h3>Report GBV</h3>
+            <a href="report_form.html" class="btn">Submit a Report</a>
+        </div>
+        <div class="card">
+            <h3>Submitted Reports</h3>
+            <a href="submitted-reports.html" class="btn">View Reports</a>
+        </div>
+        <div class="card">
+            <h3>Resources</h3>
+            <a href="resources.html" class="btn">View Resources</a>
+        </div>
+    </section>
+
+    
+   
+</body>
+</html>
