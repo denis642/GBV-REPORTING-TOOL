@@ -1,0 +1,9 @@
+# Ignore .env files that contain sensitive credentials
+.env
+
+# Ignore node_modules folder in the backend
+backend/node_modules/
+
+# Ignore other sensitive or large files (optional)
+*.log
+.DS_Store
